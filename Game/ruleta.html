@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruleta de Tareas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Ruleta</h1>
+    <button id="playButton">RULETA</button>
+    <div id="resultContainer" style="display: none;">
+        <h2>Tareas asignadas</h2>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const namesInput = prompt("Ingresa los nombres separados por comas:");
+        const names = namesInput.split(",").map(name => name.trim());
+
+        const tasks = [
+          "Compra carne",
+          "Compra escabio",
+          "Hace el asado",
+          "Consigue la joda",
+          "Compra hielo",
+          "Consigue minas?",
+          "Pone el lugar",
+          "Pone el fasito",
+          "Sorprende con algo",
+          "Hace segunda a todos"
+        ];
+
+        const assignedTasks = [];
+
+        while (names.length > 0) {
+          const randomNumber = Math.floor(Math.random() * names.length);
+          const assignedName = names.splice(randomNumber, 1)[0];
+          const assignedTask = tasks.splice(0, 1)[0];
+          const assignedColor = getRandomLightColor();
+
+          assignedTasks.push({ name: assignedName, task: assignedTask, color: assignedColor });
+        }
+
+        const taskListElement = document.getElementById("taskList");
+        taskListElement.innerHTML = "";
+
+        assignedTasks.forEach(function (assignment) {
+          const listItem = document.createElement("li");
+          listItem.textContent = assignment.name + ": " + assignment.task;
+          listItem.style.backgroundColor = assignment.color;
+          listItem.style.color = "#FFFFFF";
+          listItem.style.fontWeight = "bold";
+          taskListElement.appendChild(listItem);
+        });
+
+        const resultContainer = document.getElementById("resultContainer");
+        resultContainer.style.display = "block";
+    </script>
+</body>
+</html>

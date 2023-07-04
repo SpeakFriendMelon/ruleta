@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 36px; /* Tamaño de fuente aumentado */
+    font-weight: bold; /* Tipografía en negrita */
+    text-transform: uppercase; /* Convertir texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultContainer {
+    margin-top: 20px;
+    display: none;
+    text-align: center;
+}
+
+#resultContainer h2 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#taskList li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF; /* Color de la tipografía en blanco */
+    font-weight: bold; /* Tipografía en negrita */
+    width: 80%; /* Ancho del 80% */
+    margin-left: 10%; /* Margen izquierdo del 10% */
+    margin-right: 10%; /* Margen derecho del 10% */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        width: 160px;
+        font-size: 14px;
+    }
+
+    #resultContainer h2 {
+        font-size: 18px;
+    }
+
+    #taskList li {
+        font-size: 14px;
+    }
+}
